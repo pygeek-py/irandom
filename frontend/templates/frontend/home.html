@@ -245,7 +245,7 @@
 	async function worklist() {
 		var lister = document.getElementById('conta');
 
-		var url = 'http://localhost:8000/base/'
+		var url = 'http://irandom.herokuapp.com/base/'
 		//var token = JSON.parse(localStorage.getItem('jwts'));
 		//console.log(token)
 		const response = await fetch (url, {
@@ -284,7 +284,7 @@
 	async function acc() {
 		var modal = document.getElementById("myModal");
 		modal.style.display = "block";
-		var url = 'http://localhost:8000/base/accept/'
+		var url = 'http://irandom.herokuapp.com/base/accept/'
 		var token = JSON.parse(localStorage.getItem('jwts'));
 		console.log(token)
 		const response = await fetch (url, {

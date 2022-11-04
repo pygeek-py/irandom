@@ -265,7 +265,7 @@
 	acc()
 	accp()
 	async function acc() {
-		var url = 'http://localhost:8000/base/listaccept/'
+		var url = 'http://irandom.herokuapp.com/base/listaccept/'
 		var token = JSON.parse(localStorage.getItem('jwts'));
 		console.log(token)
 		const response = await fetch (url, {
@@ -304,7 +304,7 @@
 
 
 	async function accs() {
-		var url = 'http://localhost:8000/base/listaccept/'
+		var url = 'http://irandom.herokuapp.com/base/listaccept/'
 		var token = JSON.parse(localStorage.getItem('jwts'));
 		console.log(token)
 		var container = document.getElementById('contain');
@@ -344,7 +344,7 @@
 	
 
 	async function deletes(id) {
-		var url = `http://localhost:8000/base/acceptdel/${id}`
+		var url = `http://irandom.herokuapp.com/base/acceptdel/${id}`
 
 		const response = await fetch(url, {
 			method: 'DELETE',
@@ -362,7 +362,7 @@
 		var modal = document.getElementById("myModal");
 		modal.style.display = "block";
 
-		var url = `http://localhost:8000/base/acceptdel/${id}`
+		var url = `http://irandom.herokuapp.com/base/acceptdel/${id}`
 
 		const response = await fetch(url, {
 			method: 'DELETE',
