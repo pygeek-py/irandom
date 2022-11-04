@@ -1,1 +1,1 @@
-web: gunicorn study.wsgi
+web: gunicorn iq.wsgi
