@@ -1,0 +1,409 @@
+{% extends 'frontend/base.html' %}
+
+{% block body %}
+<style type="text/css">
+	.body1 {
+		display: none;
+	}
+	@media only screen and (orientation: portrait) {
+		.body1 {
+			display: block;
+		}
+		body {
+			background: url('./media/images/download.jpg');
+			background-size: cover;
+		}
+		* {
+			font-family: sans-serif;
+			margin: 0;
+			color: white;
+		}
+		a {
+			text-decoration: none;
+		}
+		.round {
+			width: 15vw;
+			height: 10vh;
+			border-radius: 50%;
+		}
+		.middle {
+			margin-left: 2rem;
+		}
+		.h1mid {
+			font-weight: 500;
+			font-size: 2rem;
+			opacity: 0.9;
+			width: 65%;
+		}
+		.h1mids {
+			font-weight: 500;
+			font-size: 2rem;
+			opacity: 0.9;
+		}
+		.h1mids {
+			font-weight: 500;
+			font-size: 1.5rem;
+			margin-top: 0.5rem;
+			opacity: 0.9;
+		}
+		.h4mid {
+			font-weight: lighter;
+			font-size: 1.3rem;
+			opacity: 0.7;
+		}
+		.h4mide {
+			font-weight: lighter;
+			font-size: 1.7rem;
+			opacity: 0.7;
+			padding-bottom: 0.4rem;
+
+		}
+		.spans {
+			color: yellow;
+		}
+		.header {
+			width: 100%;
+			height: fit-content;
+		}
+		.head {
+			width: 98%;
+			margin: auto;
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+		}
+		.he {
+			display: flex;
+			justify-content: space-even;
+			align-items: center;
+			width: 60%;
+			margin-top: 0.7rem;
+		}
+		.icon {
+			font-size: 2rem;
+			opacity: 0.8;
+		}
+		.img {
+			width: 20%;
+		}
+		.long {
+			width: 98%;
+			height: 0.3vh;
+			background-color: grey;
+			margin: auto;
+			margin-top: 0.7rem;
+		}
+		.footer {
+			width: 100%;
+			height: 9vh;
+			background: black;
+			bottom: 0;
+			position: absolute;
+		}
+		.foot {
+			width: 80%;
+			margin: auto;
+			color: white;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+		.con {
+			width: 90%;
+			height: fit-content;
+			margin: auto;
+			margin-top: 1.6rem;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+		.conx {
+			width: 94%;
+			height: fit-content;
+			margin: auto;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding-top: 1rem;
+		}
+		.tain {
+			width: 30%;
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+		}
+		.maycon {
+			width: 60%;
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+		}
+		.contain {
+			margin-top: 0.8rem;
+			height: 75vh;
+			width: 100%;
+			overflow-y: auto;
+		}
+		.set {
+			margin-top: 1rem;
+			width: 65%;
+			height: 8vh;
+			background: rgb(139, 128, 0);
+			text-align: center;
+			padding-top: 0.8rem;
+			margin-left: 0.8rem;
+		}
+		.sets {
+			width: 100%;
+			border: 1px solid grey;
+			border-top-style: none;
+			border-left-style: none;
+			border-right-style: none;
+		}
+		.modal {
+				  display: none; /* Hidden by default */
+				  position: fixed; /* Stay in place */
+				  z-index: 1; /* Sit on top */
+				  padding-top: 0.3rem; */ /* Location of the box */
+				  left: 0;
+				  top: 0;
+				  width: 100%; /* Full width */
+				  height: 100%; /* Full height */
+				  overflow: auto; /* Enable scroll if needed */
+				  background-color: rgb(0,0,0); /* Fallback color */
+				  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+				  margin-left: 0.1rem;
+				}
+
+			/* Modal Content */
+			.modal-content {
+			  background-color: #fefefe;
+			  padding: 20px;
+			  border: 1px solid #888;
+			  width: 80%;
+			}
+
+			/* The Close Button */
+			.close {
+			  color: #aaaaaa;
+			  float: right;
+			  font-size: 28px;
+			  font-weight: bold;
+			}
+
+			.close:hover,
+			.close:focus {
+			  color: #000;
+			  text-decoration: none;
+			  cursor: pointer;
+			}
+
+			.h2modal {
+				font-size: 1.2rem;
+				font-weight: 550;
+				opacity: 0.8;
+				color: black;
+			}
+			.amodal {
+				font-size: 1.2rem;
+				font-weight: 550;
+				opacity: 0.8;
+				color: green;
+			}
+			.probar {
+				width: 100%;
+				height: 0.2vh;
+				background-color: green;
+				margin-top: 0.5rem;
+			}
+			.fils {
+				color: black;
+			}
+		
+	}
+</style>
+<div class="header">
+	<div class="head">
+		<div class="he">
+			<img src="./media/images/downpic.jpg" class="img"></img>
+			<h3 class="h1mid">rand<span class="spans">omore</span></h3>
+		</div>
+		<i class="fa fa-home icon"></i>
+		<i class="fa fa-tags icon"></i>
+		<i class="fa fa-trophy icon"></i>
+	</div>
+</div>
+<div class="long"></div>
+<div class="sets">
+	<div class="set">
+		<h3 class="h1mids">My Challenges</h3>
+	</div>
+</div>
+<div class="contain" id="contain">
+	
+</div>
+<div id="myModal" class="modal">
+<!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2 class="h2modal">Succesfully deleted</h2>
+    <div class="probar"></div>
+  </div>
+</div>
+<br><br>
+<div class="footer">
+	<div class="foot">
+		<div class="he">
+			<img src="./media/images/downpic.jpg" class="img"></img>
+			<h3 class="h1mid">rand<span class="spans">omore</span></h3>
+		</div>
+		<i class="fa fa-twitter icon"></i>
+		<i class="fa fa-github icon"></i>
+	</div>
+</div>
+<script type="text/javascript">
+	acc()
+	accp()
+	async function acc() {
+		var url = 'http://localhost:8000/base/listaccept/'
+		var token = JSON.parse(localStorage.getItem('jwts'));
+		console.log(token)
+		const response = await fetch (url, {
+			method: 'GET',
+			headers: ({
+				'Content-Type': 'application/json',
+				'Authorization': `Bearer ${token}`
+			})
+		})
+		const data = await response.json()
+		console.log(data)
+
+		for (let i = 0;i<data.length;i++) {
+			var container = document.getElementById('contain');
+				var a = `
+					<div class="con">
+						<h3 class="h1mid">${data[i].name}</h3>
+						<div class="tain">
+							<i class="fa fa-check-square-o icon" onclick="deletese(${data[i].id})"></i>
+							
+							<i class="fa fa-trash icon" onclick="deletes(${data[i].id})"></i>
+						</div>
+					</div>
+					<div class="maycon">
+						<h3 class="h4mide">${data[i].types}</h3>
+						<h3 class="h4mide">${data[i].acces}</h3>
+					</div>
+					<div class="long"></div>
+					
+
+				`
+				container.innerHTML += a;
+				
+		}
+	}
+
+
+	async function accs() {
+		var url = 'http://localhost:8000/base/listaccept/'
+		var token = JSON.parse(localStorage.getItem('jwts'));
+		console.log(token)
+		var container = document.getElementById('contain');
+		const response = await fetch (url, {
+			method: 'GET',
+			headers: ({
+				'Content-Type': 'application/json',
+				'Authorization': `Bearer ${token}`
+			})
+		})
+		const dataf = await response.json()
+		console.log(dataf)
+
+		container.innerHTML = ''
+		for (let i = 0;i<dataf.length;i++) {
+			var container = document.getElementById('contain');
+				var a = `
+					<div class="con">
+						<h3 class="h1mid">${dataf[i].name}</h3>
+						<div class="tain">
+							<i class="fa fa-check-square-o icon" onclick="deletese(${data[i].id})"></i>
+							<i class="fa fa-trash icon" onclick="deletes(${dataf[i].id})"></i>
+						</div>
+					</div>
+					<div class="maycon">
+						<h3 class="h4mide">${dataf[i].types}</h3>
+						<h3 class="h4mide">${dataf[i].acces}</h3>
+					</div>
+					<div class="long"></div>
+
+				`
+				container.innerHTML += a;
+				
+		}
+	}
+
+	
+
+	async function deletes(id) {
+		var url = `http://localhost:8000/base/acceptdel/${id}`
+
+		const response = await fetch(url, {
+			method: 'DELETE',
+			headers: ({
+				'Content-Type': 'application/json'
+			})
+		})
+		const data = await response.json()
+		console.log(data)
+		accs()
+
+	}
+	async function deletese(id) {
+
+		var modal = document.getElementById("myModal");
+		modal.style.display = "block";
+
+		var url = `http://localhost:8000/base/acceptdel/${id}`
+
+		const response = await fetch(url, {
+			method: 'DELETE',
+			headers: ({
+				'Content-Type': 'application/json'
+			})
+		})
+		const data = await response.json()
+		console.log(data)
+		accs()
+
+	}
+
+
+
+
+
+	//modal
+	var modal = document.getElementById("myModal");
+
+	// Get the button that opens the modal
+	//var btn = document.getElementById("myBtn");
+
+	// Get the <span> element that closes the modal
+	var span = document.getElementsByClassName("close")[0];
+
+	// When the user clicks the button, open the modal 
+	function btns() {
+		modal.style.display = "block";
+	}
+
+	// When the user clicks on <span> (x), close the modal
+	function closes() {
+	  modal.style.display = "none";
+	}
+
+	// When the user clicks anywhere outside of the modal, close it
+	window.onclick = function(event) {
+	  if (event.target == modal) {
+	    modal.style.display = "none";
+	  }
+	}
+</script>
+{% endblock %}

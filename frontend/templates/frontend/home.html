@@ -1,0 +1,339 @@
+{% extends 'frontend/base.html' %}
+
+{% block body %}
+<style type="text/css">
+	.body1 {
+		display: none;
+	}
+	@media only screen and (orientation: portrait) {
+		.body1 {
+			display: block;
+		}
+		body {
+			background: url('./media/images/download.jpg');
+			background-size: cover;
+		}
+		* {
+			font-family: sans-serif;
+			margin: 0;
+			color: white;
+		}
+		a {
+			text-decoration: none;
+		}
+		.round {
+			width: 15vw;
+			height: 10vh;
+			border-radius: 50%;
+		}
+		.middle {
+			margin-left: 2rem;
+		}
+		.h1mid {
+			font-weight: 500;
+			font-size: 2rem;
+		}
+		.h1mids {
+			font-weight: 500;
+			font-size: 1.5rem;
+			margin-top: 0.5rem;
+			opacity: 0.9;
+		}
+		.h4mid {
+			font-weight: lighter;
+			font-size: 1.3rem;
+			opacity: 0.7;
+		}
+		.h4mide {
+			font-weight: lighter;
+			font-size: 1.4rem;
+			opacity: 0.7;
+			padding-bottom: 0.4rem;
+
+		}
+		.spans {
+			color: yellow;
+		}
+		.header {
+			width: 100%;
+			height: fit-content;
+		}
+		.head {
+			width: 98%;
+			margin: auto;
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+		}
+		.he {
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+			width: 60%;
+			margin-top: 0.7rem;
+		}
+		.icon {
+			font-size: 2rem;
+			opacity: 0.8;
+		}
+		.img {
+			width: 20%;
+		}
+		.long {
+			width: 98%;
+			height: 0.3vh;
+			background-color: grey;
+			margin: auto;
+			margin-top: 0.7rem;
+		}
+		.contain {
+			width: 85%;
+			margin-left: 2rem;
+			margin-top: 2rem;
+		}
+		.h1con {
+			font-size: 2.6rem;
+			font-weight: 750;
+			opacity: 0.9;
+		}
+		.conflex {
+			width: 98%;
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+			margin-top: 2rem;
+		}
+		.but {
+			width: 70%;
+			height: 12vh;
+			text-align: center;
+			background: transparent;
+			border-color: yellow;
+			border-radius: 0.4rem;
+			font-size: 2rem;
+			opacity: 0.9;
+		}
+		.acc {
+			margin-top: 2rem;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			width: 80%;
+		}
+		.buts {
+			width: 22%;
+			height: 9vh;
+			text-align: center;
+			background: yellow;
+			border: none;
+			border-radius: 0.4rem;
+			font-size: 2rem;
+			color: white;
+			opacity: 0.9;
+		}
+		.footer {
+			width: 100%;
+			height: 9vh;
+			background: black;
+			bottom: 0;
+			position: absolute;
+		}
+		.foot {
+			width: 80%;
+			margin: auto;
+			color: white;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+			.modal {
+				  display: none; /* Hidden by default */
+				  position: fixed; /* Stay in place */
+				  z-index: 1; /* Sit on top */
+				  padding-top: 0.3rem; */ /* Location of the box */
+				  left: 0;
+				  top: 0;
+				  width: 100%; /* Full width */
+				  height: 100%; /* Full height */
+				  overflow: auto; /* Enable scroll if needed */
+				  background-color: rgb(0,0,0); /* Fallback color */
+				  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+				  margin-left: 0.1rem;
+				}
+
+			/* Modal Content */
+			.modal-content {
+			  background-color: #fefefe;
+			  padding: 20px;
+			  border: 1px solid #888;
+			  width: 80%;
+			}
+
+			/* The Close Button */
+			.close {
+			  color: #aaaaaa;
+			  float: right;
+			  font-size: 28px;
+			  font-weight: bold;
+			}
+
+			.close:hover,
+			.close:focus {
+			  color: #000;
+			  text-decoration: none;
+			  cursor: pointer;
+			}
+
+			.h2modal {
+				font-size: 1.2rem;
+				font-weight: 550;
+				opacity: 0.8;
+				color: black;
+			}
+			.amodal {
+				font-size: 1.2rem;
+				font-weight: 550;
+				opacity: 0.8;
+				color: green;
+			}
+			.probar {
+				width: 100%;
+				height: 0.2vh;
+				background-color: green;
+				margin-top: 0.5rem;
+			}
+	}
+</style>
+<div class="header">
+	<div class="head">
+		<div class="he">
+			<img src="./media/images/downpic.jpg" class="img"></img>
+			<h3 class="h1mid">rand<span class="spans">omore</span></h3>
+		</div>
+		<i class="fa fa-home icon"></i>
+		<a href="{% url 'your' %}"><i class="fa fa-tags icon"></i></a>
+		<i class="fa fa-trophy icon"></i>
+	</div>
+</div>
+<div class="long"></div>
+<div class="contain" id="conta">
+	
+</div>
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2 class="h2modal">Succesfully added....<a href="{% url 'your' %}" class="amodal">Here</a></h2>
+    <div class="probar"></div>
+  </div>
+</div> 
+<div class="footer">
+	<div class="foot">
+		<div class="he">
+			<img src="./media/images/downpic.jpg" class="img"></img>
+			<h3 class="h1mid">rand<span class="spans">omore</span></h3>
+		</div>
+		<i class="fa fa-twitter icon"></i>
+		<i class="fa fa-github icon"></i>
+	</div>
+</div>
+<script type="text/javascript">
+	worklist()
+	var arr = []
+	async function worklist() {
+		var lister = document.getElementById('conta');
+
+		var url = 'http://localhost:8000/base/'
+		//var token = JSON.parse(localStorage.getItem('jwts'));
+		//console.log(token)
+		const response = await fetch (url, {
+			method: 'GET',
+			headers: ({
+				'Content-Type': 'application/json'
+			})
+		})
+		const data = await response.json()
+		console.log(data)
+		tired(data)
+	}
+	function tired(data) {
+			
+			for (let i = 0;i<data.length;i++) {
+				var lister = document.getElementById('conta');
+				arr.push(data[i]) 
+					
+			}
+			arr.sort(() => Math.random() - 0.5);
+			var a = `
+				<h1 class="h1con">${arr[0].name}</h1>
+				<div class="conflex">
+					<h3 class="h1mids">Type: ${arr[0].types}</h3>
+					<h3 class="h1mids">Accessibility: ${arr[0].acces}</h3>
+				</div>
+				<div class="acc">
+					<button class="but" onclick="acc()">Accept Challenge</button>
+					<button class="buts" onclick="worklist()"><i class="fa fa-refresh icon"></i></button>
+				</div>
+			`
+			lister.innerHTML = a;
+			console.log(arr[0])
+	}
+
+	async function acc() {
+		var modal = document.getElementById("myModal");
+		modal.style.display = "block";
+		var url = 'http://localhost:8000/base/accept/'
+		var token = JSON.parse(localStorage.getItem('jwts'));
+		console.log(token)
+		const response = await fetch (url, {
+			method: 'POST',
+			headers: ({
+				'Content-Type': 'application/json',
+				'Authorization': `Bearer ${token}`
+			}),
+			body: JSON.stringify({
+				name: arr[0].name,
+				types: arr[0].types,
+				acces: arr[0].acces
+			})
+		})
+		console.log("success")
+		worklist()
+	}
+
+
+
+
+
+
+
+
+	//modal
+	var modal = document.getElementById("myModal");
+
+	// Get the button that opens the modal
+	//var btn = document.getElementById("myBtn");
+
+	// Get the <span> element that closes the modal
+	var span = document.getElementsByClassName("close")[0];
+
+	// When the user clicks the button, open the modal 
+	function btns() {
+		modal.style.display = "block";
+	}
+
+	// When the user clicks on <span> (x), close the modal
+	span.onclick = function() {
+	  modal.style.display = "none";
+	}
+
+	// When the user clicks anywhere outside of the modal, close it
+	window.onclick = function(event) {
+	  if (event.target == modal) {
+	    modal.style.display = "none";
+	  }
+	}
+</script>
+{% endblock %}

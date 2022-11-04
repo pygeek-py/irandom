@@ -1,0 +1,164 @@
+{% extends 'frontend/base.html' %}
+
+{% block body %}
+<style>
+	.body1 {
+		display: none;
+	}
+	@media only screen and (orientation: portrait) {
+		.body1 {
+			display: block;
+		}
+		body {
+			background: url('/media/images/download.jpg');
+			background-size: cover;
+		}
+		* {
+			font-family: sans-serif;
+			color: white;
+		}
+		.round {
+			width: 25vw;
+			height: 10vh;
+			border-radius: 50%;
+			background-color: black;
+			margin: 0 auto;
+			margin-top: 2rem;
+			margin-bottom: 2rem;
+		}
+		.middle {
+			margin-left: 2rem;
+		}
+		.h1mid {
+			font-weight: 500;
+			font-size: 2rem;
+		}
+		.h4mid {
+			font-weight: lighter;
+			font-size: 1.3rem;
+			opacity: 0.7;
+		}
+		.spa {
+			font-weight: lighter;
+			font-size: 1.3rem;
+			opacity: 0.7;
+			color: blue;
+		}
+		.usernames {
+			width: 85%;
+			height: 7vh;
+			border: 1px solid black;
+			background-color: transparent;
+			font-size: 1.6rem;
+			color: gray;
+			padding-left: 2rem;
+			margin-bottom: 0.9rem;
+		}
+		.usernames:hover {
+			border: 1px solid black;
+			background-color: transparent;
+		}
+		.passwords {
+			width: 85%;
+			height: 7vh;
+			border: 1px solid black;
+			background-color: transparent;
+			font-size: 1.6rem;
+			color: gray;
+			padding-left: 2rem;
+		}
+		.passwords:hover {
+			border: 1px solid black;
+			background-color: transparent;
+		}
+		.but {
+			width: 95%;
+			height: 7vh;
+			border: none;
+			background-color: blue;
+			font-size: 1.6rem;
+			color: white;
+			text-align: center;
+			margin-top: 1.5rem;
+		}
+		.but:hover {
+			
+		}
+		.flexor {
+			width: 90%;
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+		}
+		.line {
+			width: 43%;
+			height: 0.2vh;
+			background-color: grey;
+		}
+		.buts {
+			width: 95%;
+			height: 8.5vh;
+			border: 1px solid gray;
+			background-color: transparent;
+			font-size: 1.4rem;
+			color: gray;
+			text-align: center;
+			margin-top: 1.5rem;
+			opacity: 0.8;
+		}
+	}
+</style>
+	<div class="body1">
+		<div class="round"></div>
+		<center>
+				<h2 class="h1mid">Welcome</h2>
+				<h4 class="h4mid">Sign Up to Randomore to Continue</h4>
+		</center>
+		<div class="middle">
+			<input type="text" placeholder="username" id="username" class="usernames">
+			<input type="password" placeholder="password" id="password" class="passwords">
+
+
+
+			<button class="but" onclick="signin()" type="submit">Continue</button>
+
+
+
+
+
+			<h4 class="h4mid">Already have an account? <span class="spa">Sign in</span></h4>
+			<div class="flexor">
+				<div class="line"></div>
+				<h3 class="h3mid">OR</h3>
+				<div class="line"></div>
+			</div>
+			<button class="buts" onclick="signin()" type="submit">Continue with Google</button>
+		</div>
+	</div>
+<script type="text/javascript">
+		async function signin() {
+			var url = 'http://localhost:8000/base/login/'
+
+			const response = await fetch(url, {
+				method: 'POST',
+				headers: ({
+					'Content-Type': 'application/json'
+				}),
+				body: JSON.stringify({
+					username: document.getElementById('username').value,
+					password: document.getElementById('password').value
+				})
+			})
+			const data = await response.json()
+			console.log(data)
+			if (data.jwt) {
+				window.location = "/"
+				localStorage.setItem('jwts', JSON.stringify(data.jwt));
+			}
+			else {
+				alert("Wrong Inputs")
+			}
+
+		}
+</script>
+{% endblock %}

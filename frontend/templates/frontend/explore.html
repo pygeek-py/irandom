@@ -1,0 +1,119 @@
+{% extends 'frontend/base.html' %}
+
+{% block body %}
+<style type="text/css">
+	.body1 {
+		display: none;
+	}
+	@media only screen and (orientation: portrait) {
+		.body1 {
+			display: block;
+		}
+		body {
+			background: url('/media/images/download.jpg');
+			background-size: cover;
+		}
+		* {
+			font-family: sans-serif;
+			margin: 0;
+			color: white;
+		}
+		a {
+			text-decoration: none;
+		}
+		.h1mid {
+			font-weight: 500;
+			font-size: 2rem;
+		}
+		.h1mids {
+			font-weight: 500;
+			font-size: 1.5rem;
+			margin-top: 0.5rem;
+		}
+		.h4mid {
+			font-weight: lighter;
+			font-size: 1.3rem;
+			opacity: 0.7;
+		}
+		.h4mide {
+			font-weight: lighter;
+			font-size: 1.7rem;
+			opacity: 0.7;
+			padding-bottom: 0.4rem;
+
+		}
+		.spans {
+			color: yellow;
+		}
+		.header {
+			width: 100%;
+			height: fit-content;
+		}
+		.head {
+			width: 98%;
+			margin: auto;
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+		}
+		.he {
+			display: flex;
+			justify-content: space-even;
+			align-items: center;
+			width: 60%;
+			margin-top: 0.7rem;
+		}
+		.icon {
+			font-size: 2rem;
+		}
+		.img {
+			width: 20%;
+		}
+		.long {
+			width: 98%;
+			height: 0.3vh;
+			background-color: grey;
+			margin: auto;
+			margin-top: 0.7rem;
+		}
+		.footer {
+			width: 100%;
+			height: 9vh;
+			background: black;
+			bottom: 0;
+			position: absolute;
+		}
+		.foot {
+			width: 80%;
+			margin: auto;
+			color: white;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+		
+	}
+</style>
+<div class="header">
+	<div class="head">
+		<div class="he">
+			<img src="/media/images/downpic.jpg" class="img"></img>
+			<h3 class="h1mid">rand<span class="spans">omore</span></h3>
+		</div>
+		<i class="fa fa-home icon"></i>
+		<i class="fa fa-tags icon"></i>
+		<i class="fa fa-trophy icon"></i>
+	</div>
+</div>
+<div class="long"></div>
+<div class="footer">
+	<div class="foot">
+		<div class="he">
+			<img src="/media/images/downpic.jpg" class="img"></img>
+			<h3 class="h1mid">rand<span class="spans">omore</span></h3>
+		</div>
+		<i class="fa fa-twitter icon"></i>
+		<i class="fa fa-github icon"></i>
+	</div>
+</div>
+{% endblock %}
