@@ -162,7 +162,7 @@ class postadd(APIView):
 		#token = auth[1].decode('utf-8')
 		token = request.COOKIES.get('jwt')
 		if not token:
-			raise AuthenticationFailed('Unauthenticateds')
+			raise AuthenticationFailed('Unauthenticateds')		
 
 		try:
 			payload = jwt.decode(token, 'secret', algorithms=['HS256'])
